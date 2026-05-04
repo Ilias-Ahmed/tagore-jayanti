@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState, type FormEvent } from "react";
 
 interface FormErrors {
   name?: string;
@@ -116,19 +116,40 @@ export default function RegistrationForm({ onRegistered }: { onRegistered?: () =
       </section>
 
       {/* ===== FLOATING ACTION BUTTON ===== */}
-      <button
-        id="fab"
-        onClick={handleFabClick}
-        className={`fixed bottom-6 right-6 z-40 px-6 py-3.5 rounded-full font-[family-name:var(--font-inter-var)] font-semibold text-sm shadow-[0_4px_24px_rgba(27,42,74,0.3)] hover:shadow-[0_8px_36px_rgba(27,42,74,0.4)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer ${
-          fabVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0 pointer-events-none"
-        } ${
-          atBottom
-            ? "bg-gradient-to-r from-gold-dark to-gold text-white"
-            : "bg-gradient-to-r from-navy to-navy-light text-white"
-        }`}
+      <div
+        className={`fixed bottom-6 right-6 z-40 transition-all duration-500 ${
+          fabVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
+        } ${!atBottom ? "animate-[bounce_2s_infinite]" : ""}`}
       >
-        {atBottom ? "Back to Top" : "I Will Participate"}
-      </button>
+        {/* Glow ring — only on participate mode */}
+        {!atBottom && (
+          <span className="absolute inset-0 rounded-full bg-gold/30 animate-[ping_2.5s_cubic-bezier(0,0,0.2,1)_infinite] pointer-events-none" />
+        )}
+        <button
+          id="fab"
+          onClick={handleFabClick}
+          className={`relative overflow-hidden group px-6 py-3 rounded-full font-[family-name:var(--font-inter-var)] transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:scale-105 active:scale-95 active:translate-y-0 ${
+            atBottom
+              ? "bg-navy text-white min-w-0 px-4 shadow-[0_4px_20px_rgba(27,42,74,0.3)] font-bold text-sm"
+              : "bg-[#0A1229]/95 backdrop-blur-md shadow-[0_8px_32px_rgba(201,168,76,0.3)] hover:shadow-[0_12px_40px_rgba(201,168,76,0.5)] ring-1 ring-inset ring-gold/40 hover:ring-gold/70"
+          }`}
+        >
+          {/* Internal shine highlight effect */}
+          {!atBottom && (
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/10 to-transparent animate-[shine_2.5s_ease-in-out_infinite] pointer-events-none" />
+          )}
+
+          <span className="relative z-10 flex items-center justify-center">
+            {atBottom ? (
+              "↑"
+            ) : (
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-gold-light via-gold to-amber-500 text-transparent bg-clip-text drop-shadow-sm">
+                Want To Participate
+              </span>
+            )}
+          </span>
+        </button>
+      </div>
 
       {/* ===== MODAL ===== */}
       {isOpen && (

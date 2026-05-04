@@ -1,14 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import Hero from "@/components/Hero";
 import About from "@/components/About";
-import RegistrationForm from "@/components/RegistrationForm";
-import ParticipantCount from "@/components/ParticipantCount";
-import Winners from "@/components/Winners";
-import Resources from "@/components/Resources";
 import Embed from "@/components/Embed";
+import FloatingTagore from "@/components/FloatingTagore";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import ParticipantCount from "@/components/ParticipantCount";
+import RegistrationForm from "@/components/RegistrationForm";
+import Resources from "@/components/Resources";
+import Winners from "@/components/Winners";
+import { useState } from "react";
 
 export default function Home() {
   const [refreshKey, setRefreshKey] = useState(0);
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <>
+      <FloatingTagore />
       <Hero />
       <About />
       <RegistrationForm onRegistered={handleRegistered} />

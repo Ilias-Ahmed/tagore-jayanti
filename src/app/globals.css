@@ -83,6 +83,11 @@
   to { opacity: 1; }
 }
 
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  20%, 100% { transform: translateX(100%); }
+}
+
 /* ========================================
    BASE STYLES
    ======================================== */
@@ -96,6 +101,21 @@ body {
   color: var(--color-navy);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   DARK MODE — UNIFIED THEME
+   ======================================== */
+/* 
+   We enforce a single unified premium golden aesthetic for both light and dark modes 
+   as requested. Tailwind handles this gracefully by not having 'dark:' classes,
+   but we explicitly disable global invert.
+*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-navy);
+  }
 }
 
 /* ========================================
