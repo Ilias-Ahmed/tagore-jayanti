@@ -22,21 +22,29 @@ export default function Hero() {
       <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full border border-gold-light/25 animate-float pointer-events-none" />
       <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full border border-gold-light/20 animate-float pointer-events-none" style={{ animationDirection: "reverse", animationDuration: "8s" }} />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
-        {/* School branding */}
-        <div className="flex flex-col items-center mb-8 animate-fade-in-down">
-          <Image
+      {/* School branding - Elegant Top Left Placement */}
+      <div className="absolute top-6 left-6 md:top-8 md:left-10 z-20 flex items-center gap-3 md:gap-4 animate-fade-in-down">
+        <div className="relative w-12 h-12 md:w-14 md:h-14">
+          <img
             src="/school-logo.jpg"
             alt="Modern Public Academy Logo"
-            width={80}
-            height={80}
-            className="rounded-full shadow-lg border-2 border-gold/30 mb-3"
+            className="w-full h-full object-cover rounded-full shadow-md border border-gold/30"
           />
-          <p className="font-[family-name:var(--font-inter-var)] text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-gold-dark">
-            Modern Public Academy Senior Secondary
+        </div>
+        <div className="flex flex-col text-left">
+          <p className="font-[family-name:var(--font-inter-var)] text-[10px] sm:text-xs md:text-sm font-extrabold tracking-[0.15em] uppercase text-navy leading-none mb-1">
+            Modern Public Academy
+          </p>
+          <p className="font-[family-name:var(--font-inter-var)] text-[8px] sm:text-[9px] md:text-[10px] font-semibold tracking-[0.2em] uppercase text-gold-dark leading-none">
+            Senior Secondary
           </p>
         </div>
+      </div>
+
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
+
 
         {/* Event badge */}
         <span className="inline-block font-[family-name:var(--font-inter-var)] text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-gold-dark bg-gold/10 border border-gold/25 px-5 py-2 rounded-full mb-6 animate-fade-in-down">
