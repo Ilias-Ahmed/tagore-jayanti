@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Rabindranath Tagore Jayanti – Poetry Competition | Modern Public Academy",
   description:
-    "Celebrate the legacy of Rabindranath Tagore at Modern Public Academy Senior Secondary. Register for the Poetry Competition, Art Drawing, and Decorative Writing event.",
+    "Celebrate the legacy of Rabindranath Tagore at Modern Public Academy Senior Secondary. Register for the Poetry Competition, and Decorative Writing event.",
   keywords: [
     "Rabindranath Tagore",
     "Tagore Jayanti",

@@ -12,7 +12,6 @@ interface FormErrors {
 
 const ACTIVITIES = [
   { value: "poetry", label: "🎤 Poetry Recitation", desc: "Recite a poem by Rabindranath Tagore" },
-  { value: "art", label: "🎨 Art Drawing", desc: "Draw a portrait or scene inspired by Tagore" },
   { value: "writing", label: "✍️ Decorative Poem Writing", desc: "Write and decorate a Tagore poem beautifully" },
 ];
 
@@ -144,7 +143,7 @@ export default function RegistrationForm({ onRegistered }: { onRegistered?: () =
               "↑"
             ) : (
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-gold-light via-gold to-amber-500 text-transparent bg-clip-text drop-shadow-sm">
-                Want To Participate
+                I Want To Participate
               </span>
             )}
           </span>
@@ -192,7 +191,11 @@ export default function RegistrationForm({ onRegistered }: { onRegistered?: () =
                     </div>
                     <div>
                       <label htmlFor="reg-section" className={labelBase}>Section <span className="text-burgundy">*</span></label>
-                      <input id="reg-section" type="text" placeholder="e.g. A" maxLength={2} value={section} onChange={(e) => { setSection(e.target.value); if (errors.section) setErrors((p) => ({ ...p, section: undefined })); }} className={`${inputBase} uppercase placeholder:normal-case ${errors.section ? "border-error" : "border-gold/20"}`} />
+                      <select id="reg-section" value={section} onChange={(e) => { setSection(e.target.value); if (errors.section) setErrors((p) => ({ ...p, section: undefined })); }} className={`${inputBase} ${errors.section ? "border-error" : "border-gold/20"}`}>
+                        <option value="">Select</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                      </select>
                       {errors.section && <p className={errBase}>{errors.section}</p>}
                     </div>
                   </div>
