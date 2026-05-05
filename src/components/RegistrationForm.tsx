@@ -127,24 +127,27 @@ export default function RegistrationForm({ onRegistered }: { onRegistered?: () =
         <button
           id="fab"
           onClick={handleFabClick}
-          className={`relative overflow-hidden group px-6 py-3 rounded-full font-[family-name:var(--font-inter-var)] transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:scale-105 active:scale-95 active:translate-y-0 ${
+          className={`relative overflow-hidden group px-8 py-4 rounded-full font-[family-name:var(--font-inter-var)] transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:scale-105 active:scale-95 active:translate-y-0 ${
             atBottom
-              ? "bg-navy text-white min-w-0 px-4 shadow-[0_4px_20px_rgba(27,42,74,0.3)] font-bold text-sm"
-              : "bg-[#0A1229]/95 backdrop-blur-md shadow-[0_8px_32px_rgba(201,168,76,0.3)] hover:shadow-[0_12px_40px_rgba(201,168,76,0.5)] ring-1 ring-inset ring-gold/40 hover:ring-gold/70"
+              ? "bg-navy text-white min-w-0 px-5 shadow-lg font-bold text-sm"
+              : "bg-gradient-to-br from-[#7A2E3A] to-[#5E232C] text-white shadow-[0_8px_32px_rgba(122,46,58,0.5)] hover:shadow-[0_12px_45px_rgba(122,46,58,0.7)] border-2 border-[#C9A84C]"
           }`}
         >
           {/* Internal shine highlight effect */}
           {!atBottom && (
-            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gold/10 to-transparent animate-[shine_2.5s_ease-in-out_infinite] pointer-events-none" />
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[shine_2.5s_ease-in-out_infinite] pointer-events-none" />
           )}
 
-          <span className="relative z-10 flex items-center justify-center">
+          <span className="relative z-10 flex items-center justify-center gap-2.5">
             {atBottom ? (
               "↑"
             ) : (
-              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-gold-light via-gold to-amber-500 text-transparent bg-clip-text drop-shadow-sm">
-                I Want To Participate
-              </span>
+              <>
+                <span className="text-[13px] sm:text-sm font-black uppercase tracking-[0.15em] drop-shadow-md">
+                  Register Now
+                </span>
+                <span className="text-lg leading-none drop-shadow-md">✍️</span>
+              </>
             )}
           </span>
         </button>

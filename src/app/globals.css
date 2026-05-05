@@ -107,15 +107,29 @@ body {
    DARK MODE — UNIFIED THEME
    ======================================== */
 /* 
-   We enforce a single unified premium golden aesthetic for both light and dark modes 
-   as requested. Tailwind handles this gracefully by not having 'dark:' classes,
-   but we explicitly disable global invert.
+   We enforce a single unified premium golden aesthetic for both light and dark modes.
 */
+:root {
+  color-scheme: light;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--color-cream);
     color: var(--color-navy);
   }
+}
+
+/* ========================================
+   TEXT SELECTION (HIGHLIGHT)
+   ======================================== */
+::selection {
+  background-color: var(--color-gold-dark);
+  color: var(--color-cream);
+}
+::-moz-selection {
+  background-color: var(--color-gold-dark);
+  color: var(--color-cream);
 }
 
 /* ========================================
