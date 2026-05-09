@@ -46,9 +46,13 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto px-6">
 
 
-        {/* Event badge */}
-        <span className="inline-block font-[family-name:var(--font-inter-var)] text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-gold-dark bg-gold/10 border border-gold/25 px-5 py-2 rounded-full mb-6 animate-fade-in-down">
-          9th May — Celebrating Tagore
+        {/* Event badge — LIVE TODAY */}
+        <span className="inline-flex items-center gap-2 font-[family-name:var(--font-inter-var)] text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-burgundy bg-burgundy/10 border border-burgundy/25 px-5 py-2 rounded-full mb-6 animate-fade-in-down">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-success"></span>
+          </span>
+          Live Today · 9th May
         </span>
 
         {/* Tagore portrait */}
